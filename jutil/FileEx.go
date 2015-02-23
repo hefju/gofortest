@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+//逐行读取数据, 默认utf8, windows建立的文件会显示乱码
 func ReadLine(fileName string, handler func(string)) error {
 	f, err := os.Open(fileName)
 	if err != nil {
