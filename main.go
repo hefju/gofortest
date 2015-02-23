@@ -7,7 +7,7 @@ import (
 
 //该项目用来测试go代码的,
 func main() {
-	jutil.ParseIni("conf.ini")
-	fmt.Println(jutil.IniConfiger["server"]["ip"])
+	jutil.TestIni_configuration()
+//	fmt.Println(jutil.IniConfiger["server"]["ip"])
 	fmt.Println("end")
 }

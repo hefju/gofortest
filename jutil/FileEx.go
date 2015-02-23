@@ -1,5 +1,5 @@
 package jutil
-
+//该文件是对go文件的扩展, go逐行读取数据比较麻烦, 在这里写好, 以后调用就可以了
 import (
 	"bufio"
 	"io"
