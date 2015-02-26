@@ -47,3 +47,6 @@ func TraverseFiles(path string){
 		}
 	}
 }
+
+
+
