@@ -1,16 +1,13 @@
 package main
 
 import (
-	"fmt"
-	 "github.com/hefju/gofortest/jutil" //采用gopath+路径, 不知道为什么webstorm不能识别,idea14可以
+
+	// "github.com/hefju/gofortest/jutil" //采用gopath+路径, 不知道为什么webstorm不能识别,idea14可以
 	//"time"
 	//"github.com/Unknwon/macaron"
-	"io/ioutil"
-
-	"github.com/go-fsnotify/fsnotify"
-	"log"
-	"path"
 	//"path/filepath"
+
+    "github.com/hefju/gofortest/maintest"
 )
 
 //该项目用来测试go代码的,
@@ -28,5 +25,6 @@ func main() {
 
 	//3.
 	//jutil.TraverseFiles(".")
-	jutil.SetWatcher(".")
+	//jutil.SetWatcher(".")
+    maintest.Main2();
 }
