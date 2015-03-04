@@ -14,7 +14,7 @@ func Main2() {
     go jutil.SetWatcher(".", restartChan)
 
     fmt.Println("runner begin")
-    runner := jutil.Runner{"myhttp"}
+    runner := jutil.Runner{Filename:"myhttp"}
     runner.Run()
     runner.WaitForRestart(restartChan)
     // for {

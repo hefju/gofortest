@@ -6,6 +6,7 @@ import (
 	"log"
 	"path"
     "os/exec"
+    "time"
 )
 
 
@@ -68,15 +69,20 @@ func GetFoleder(root string) {
 //用来重启 http server
 //负责go run (http server) 和 taskkill正在运行的http server
 type Runner struct {
-    Filename string
+    Filename string  //准备运行的文件名
+    lastExec time.Time //上次执行时间, 防止连续执行程序
 }
 
 //重启服务器
 func (x Runner) WaitForRestart(order chan int) {
     for {
         <-order
-        x.Kill()
-        x.Run()
+        now:=time.Now()//检验时间, 如果超过1秒才重启http server
+        if now.After(x.lastExec.Add(time.Second)){
+            x.lastExec=time.Now()
+            x.Kill()
+            x.Run()
+        }
     }
 }
 
