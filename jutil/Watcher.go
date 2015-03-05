@@ -7,6 +7,7 @@ import (
 	"path"
     "os/exec"
     "time"
+    "os"
 )
 
 
@@ -91,6 +92,7 @@ func (x Runner) Run() {
     goname := x.Filename + ".go"
     fmt.Println("Run:" + goname)
     c := exec.Command("go", "run", goname) // "myserver.go")
+    c.Stdout=os.Stdout
     c.Start()
 }
 

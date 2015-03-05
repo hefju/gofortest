@@ -27,6 +27,6 @@ func main() {
 	//jutil.TraverseFiles(".")
 	//jutil.SetWatcher(".")
    // maintest.Main2();
-    //maintest.HotCompile("myhttp")
-    maintest.Jsonconfigtest()
+    maintest.HotCompile("myoutput")
+    // maintest.Jsonconfigtest()
 }

@@ -20,7 +20,7 @@ func HotCompile(filename string){
     go jutil.SetWatcher(".", restartChan)
 
     fmt.Println("runner begin")
-    runner := jutil.Runner{Filename: gofile}//"myhttp"}
+    runner := jutil.Runner{Filename: filename}//"myhttp"}
     runner.Run()
     runner.WaitForRestart(restartChan)
 }
